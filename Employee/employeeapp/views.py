@@ -10,7 +10,12 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.template import loader
+from django.http import HttpResponse
 
+
+def ClientSide(request):
+    return render(request,'reactClient/index.html')
 
 
 @api_view(['GET', 'POST'])
@@ -48,6 +53,18 @@ def Studentdetail(request, pk):
     elif request.method == 'DELETE':
         obj.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def filterGender(request, gendername):
+   
+    try:
+        obj = Employees.objects.filter(gender=gendername)
+    except Employees.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = EmpolyeesSerializer(obj,many=True)
+        return Response(serializer.data)
 
 
 	

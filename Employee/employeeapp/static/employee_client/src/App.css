@@ -10,6 +10,7 @@ img{
   height:100px;
   width:100px;
   margin-left: 35%;
+ 
 }
 .avatar {
   margin-left: 35% !important;
@@ -19,7 +20,12 @@ img{
   border-radius: 500px;
   -webkit-border-radius: 500px;
   -moz-border-radius: 500px;
+  pointer-events: auto;
 }
+.m-hover{
+  pointer-events: none;
+}
+
 .m-hover:hover{
   width: 375px;
   height: 420px;

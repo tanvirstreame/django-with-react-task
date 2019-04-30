@@ -16,7 +16,7 @@ class CreateStudent extends Component {
     event.preventDefault();
     const data = new FormData(event.target);
     
-    fetch('http://localhost:8000/api/v1/', {
+    fetch('http://localhost:8000/api/v1/all', {
       method: 'POST',
       body: data,
     });
@@ -32,14 +32,14 @@ class CreateStudent extends Component {
                     <div class="panel panel-heading">Create Student</div>
                     <div class="panel panel-body">
                         <form onSubmit={this.handleSubmit} method="post">
-                            <strong>Username:</strong> <br /> <input type="text" name="username" placeholder="Nathaniel"/> <br />
+                            <strong>Username:</strong> <br /> <input type="text" name="username" placeholder="username"/> <br />
                             <strong>Surname</strong> <br /> <input type="text" name="surname" placeholder="Surname" /> <br />
                             <strong>Gender</strong><br/>
                             <select name="gender">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select> <br />
-                            <strong>City</strong> <br /> <input type="text" name="city" placeholder="City" /> <br />
+                            <strong>City</strong> <br /> <input type="text" name="city" placeholder="city" /> <br />
                             <strong>Country</strong> <br /> <input type="text" name="country" placeholder="country" /> <br /><br />
                             <button type="submit" class="btn btn-primary">Create Student</button>
                         </form>

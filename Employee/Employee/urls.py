@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from employeeapp.views import StudentInfo,Studentdetail
+from employeeapp.views import StudentInfo,Studentdetail,filterGender,ClientSide
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/all', StudentInfo),
     url(r'^api/v1/Studentdetail/(?P<pk>\d+)/$', Studentdetail),
+    url(r'^api/v1/filterGender/(?P<gendername>[\w\-]+)/$', filterGender),
+    url(r'^client/', ClientSide),
     
 ]

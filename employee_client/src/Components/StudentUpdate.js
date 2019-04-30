@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from './pic.png'
-import axios from 'axios';
+import axios from './axioshandaler'
+
 
 class UpdateStudent extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class UpdateStudent extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/v1/');
+      const res = await fetch('http://127.0.0.1:8000/api/v1/all');
       const todos = await res.json();
       this.setState({
         todos
@@ -32,8 +32,8 @@ class UpdateStudent extends Component {
     event.preventDefault();
     const data = new FormData(event.target);
     
-    fetch('http://localhost:8000/api/v1/', {
-      method: 'POST',
+    fetch('http://localhost:8000/api/v1/Studentdetail/', {
+      method: 'PUT',
       body: data,
     });
   }

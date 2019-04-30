@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from './pic.png'
-class App extends Component {
+class GetDetail extends Component {
   state = {
     todos: []
   };
@@ -44,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default GetDetail;
