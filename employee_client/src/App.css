@@ -1,0 +1,26 @@
+.card{
+  margin: 30px;
+  width: 350px;
+  height: 400px;
+}
+.m-center{
+  margin-left:40%;
+}
+img{
+  height:100px;
+  width:100px;
+  margin-left: 35%;
+}
+.avatar {
+  margin-left: 35% !important;
+  width:100px;
+  margin: 10px;
+  border:7px solid #3498db;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+}
+.m-hover:hover{
+  width: 375px;
+  height: 420px;
+}
