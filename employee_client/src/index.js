@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './Components/App';
+import EmployeeGetAll from './Components/EmployeeGetAll';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import CreateStudent from './Components/createStudent';
-import UpdateStudent from './Components/StudentUpdate';
-import DeleteStudent from './Components/StudentDelete';
-import FilterGender from './Components/filterGender';
+import EmployeeCreate from './Components/EmployeeCreate';
+import EmpoyeeUpdateList from './Components/EmpoyeeUpdateList';
+import EmpoyeeUpdate from './Components/EmpoyeeUpdate';
+import EmployeeDelete from './Components/EmployeeDelete';
+import FilterGender from './Components/FilterGender';
 import Home from './Components/Home';
-
+import EmployeeInfo from './Components/EmployeeInfo';
 
 const routing = (
     <Router>
       <div>
-        <Route path="/Home" component={Home} />
-        <Route path="/Get" component={App} />
-        <Route path="/create" component={CreateStudent} />
-        <Route path="/update" component={UpdateStudent} />
-        <Route path="/delete" component={DeleteStudent } />
-        <Route path="/filter" component={FilterGender } />
-
+        <Route path="/" component={Home}/>
+        <Route path="/Get" component={EmployeeGetAll}/>
+        <Route path="/create" component={EmployeeCreate}/>
+        <Route path="/update/:id" component={EmpoyeeUpdate}/>
+        <Route path="/updateEmployee" component={EmpoyeeUpdateList}/>
+        <Route path="/delete" component={EmployeeDelete}/>
+        <Route path="/filter" component={FilterGender}/>
+        <Route path="/employeeInfo/:id" component={EmployeeInfo}/>
       </div>
     </Router>
   )

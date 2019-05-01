@@ -10,9 +10,8 @@ img{
   height:100px;
   width:100px;
   margin-left: 35%;
- 
 }
-.avatar {
+.imgcir {
   margin-left: 35% !important;
   width:100px;
   margin: 10px;
@@ -20,9 +19,9 @@ img{
   border-radius: 500px;
   -webkit-border-radius: 500px;
   -moz-border-radius: 500px;
-  
 }
 .m-hover:hover{
   width: 375px;
   height: 420px;
 }
+
