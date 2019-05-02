@@ -47,14 +47,3 @@ def Studentdetail(request, pk):
         obj.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['GET'])
-def filterGender(request, gendername):
-   
-    try:
-        obj = Employees.objects.filter(gender=gendername)
-    except Employees.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'GET':
-        serializer = EmpolyeesSerializer(obj,many=True)
-        return Response(serializer.data)
