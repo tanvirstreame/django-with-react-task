@@ -1,6 +1,11 @@
 .card{
   margin: 30px;
   width: 350px;
+ 
+}
+.m-hover{
+  margin: 30px;
+  width: 350px;
   height: 400px;
 }
 .m-center{
@@ -24,4 +29,8 @@ img{
   width: 375px;
   height: 420px;
 }
+.linkelement:hover{
+  text-decoration: none;
+}
+
 

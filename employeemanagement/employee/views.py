@@ -24,9 +24,8 @@ def StudentInfo(request):
 			return Response(serializer.data)
 	
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET','PUT', 'DELETE'])
 def Studentdetail(request, pk):
-   
     try:
         obj = Employees.objects.filter(id=pk)
     except Employees.DoesNotExist:
@@ -37,7 +36,8 @@ def Studentdetail(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = EmpolyeesSerializer(obj, data=request.data)
+        obj1 = Employees.objects.filter(id=pk).first()
+        serializer = EmpolyeesSerializer(obj1,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

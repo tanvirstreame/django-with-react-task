@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './assets/pic.png'
 
 function SearchingEmployee(term){
   return function(x){

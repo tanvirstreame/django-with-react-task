@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from './assets/pic.png';
 import queryString from 'query-string';
 class EmployeeInfo extends Component {
   state = {
     todos: []
   };
 
-  componentDidMount() {
-  const values = queryString.parse(this.props.location.search)
-  console.log(values.id) // "top"
-  console.log(values.origin) // "im"
-  }
-
   async componentDidMount() {
+    const values = queryString.parse(this.props.location.search)
+    console.log(values.id) // "top"
+    console.log(values.origin) // "im"
     // console.log(this.props.match.params.id);
     try {
       const res = await fetch("http://127.0.0.1:8000/api/v1/Studentdetail/" + this.props.match.params.id,);
@@ -31,16 +27,24 @@ class EmployeeInfo extends Component {
       <div className='container'>
         <div className="row">
               {this.state.todos.map(item => (
-                <div id="mycard" className="card m-hover">
+                <div className="card">
                   <div className="card-body">
                      <div key={item.id}>
-                       <h4 className="text-center">{item.username}</h4>
-                       <div className="row text-center m-center">
-                        <p className="text-center">{item.gender}</p><i className="fas fa-restroom"></i>
-                       </div>
-                       <div className="row text-center m-center">
-                        <i class="fas fa-building"></i><span>{item.city}</span><i class="fas fa-globe-americas"></i><span>{item.country}</span>
-                       </div>
+                       <h4 className="text-center">EmployeeInfo</h4>
+                       <label><b>Employee Id:</b></label>
+                       <span >{item.id}</span>
+                       <br/>
+                       <label><b>User Name:</b></label>
+                       <span >{item.username}</span>
+                       <br/>
+                       <label><b>Gender:</b></label>
+                       <span className="text-center">{item.gender}</span>
+                       <br/>
+                       <label><b>City:</b></label>
+                       <span>{item.city}</span>
+                       <br/>
+                       <label><b>Country:</b></label>
+                       <span>{item.country}</span>
                      </div>
                   </div> 
                </div>

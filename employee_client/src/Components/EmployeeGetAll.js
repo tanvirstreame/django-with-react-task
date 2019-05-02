@@ -24,7 +24,7 @@ class EmployeeGetAll extends Component {
       <div className='container'>
          <div className="row">
             {this.state.todos.map(item => (
-              <Link  to={`/employeeInfo/${item.id}`}>
+              <Link className="linkelement"  to={`/employeeInfo/${item.id}`}>
                 <div className="card m-hover">
                    <div className="card-body">
                        <div key={item.id}>

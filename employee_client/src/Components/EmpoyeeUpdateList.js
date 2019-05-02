@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from './assets/pic.png'
 import { Link } from 'react-router-dom'
 class EmpoyeeUpdateList extends Component {
   state = {

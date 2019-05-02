@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import EmployeeGetAll from './Components/EmployeeGetAll';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import EmployeeCreate from './Components/EmployeeCreate';
 import EmpoyeeUpdateList from './Components/EmpoyeeUpdateList';
 import EmpoyeeUpdate from './Components/EmpoyeeUpdate';
